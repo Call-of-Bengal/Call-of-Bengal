@@ -1,0 +1,31 @@
+[
+  {
+    "id": "COB-001-01",
+    "published": true,
+    "source_id": "COB-001",
+    "title_ko": "생명의 비밀",
+    "title_original": "Life's Secret",
+    "title_bn": "",
+    "genre": "fantasy",
+    "summary_ko": "총애받는 수오가 왕자를 낳자, 소외된 두오는 왕자의 목숨이 담긴 금목걸이를 빼앗는다. 낮에는 죽고 밤에는 살아나는 왕자를 구할 길은 무엇일까?",
+    "summary_bn": "",
+    "collector_ko": "Lal Behari Day",
+    "tags": [
+      "달림 쿠마르",
+      "금목걸이",
+      "두오",
+      "수오",
+      "부활",
+      "운명",
+      "Dalim Kumar",
+      "Life’s Secret"
+    ],
+    "url": "stories/cob-001-01.html",
+    "cover_image": "assets/illustrations/cob-001-01-01.webp",
+    "illustration_count": 2,
+    "original_pages": "1–15",
+    "pdf_pages": "27–45",
+    "source_edition": "Folk-Tales of Bengal (Macmillan, 1912)",
+    "download_pdf": "assets/downloads/cob-001-01-life-secret.pdf"
+  }
+]
