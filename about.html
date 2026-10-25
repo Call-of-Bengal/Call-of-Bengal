@@ -1,0 +1,66 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Call of Bengal 소개. 한국어로 기록하는 벵골 민담 디지털 아카이브의 목적과 운영 원칙.">
+<title>아카이브 소개 | Call of Bengal</title><style>
+:root{--bg:#0d0d0c;--panel:#171715;--ink:#f2e9dd;--muted:#a8a198;--line:#35322d;--amber:#c79b65;--green:#89b58a}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,"Noto Sans KR",sans-serif;line-height:1.65}a{color:inherit;text-decoration:none}button,input{font:inherit}
+.wrap{width:min(1040px,calc(100% - 40px));margin:auto}
+header{padding:26px 0 16px;display:flex;justify-content:space-between;align-items:center}
+.brand{font-family:Georgia,serif;font-size:19px;letter-spacing:.01em}
+nav{display:flex;gap:24px;font-size:13px;color:var(--muted)}nav a:hover{color:var(--ink)}
+.hero{margin:18px 0 62px;border:1px solid var(--line);background:#141412;min-height:350px;padding:56px 58px;position:relative;overflow:hidden}
+.eyebrow{font-size:10px;letter-spacing:.22em;color:var(--amber);font-weight:700}
+h1{font-family:Georgia,"Times New Roman",serif;font-weight:400;font-size:clamp(48px,7vw,80px);line-height:1.1;letter-spacing:-.045em;margin:19px 0 9px}
+.subtitle{font-size:16px;color:#d1c8bb;margin:0 0 32px}
+.radio{position:absolute;right:56px;top:48px;display:flex;gap:15px;align-items:center;color:var(--green);font-family:monospace;font-size:10px;letter-spacing:.12em}
+.led{width:6px;height:6px;border-radius:50%;background:var(--green);box-shadow:0 0 9px var(--green)}
+.wave{display:flex;align-items:center;gap:3px;height:17px}.wave i{width:2px;background:var(--green);height:7px;opacity:.8}.wave i:nth-child(2),.wave i:nth-child(6){height:13px}.wave i:nth-child(3),.wave i:nth-child(5){height:9px}.wave i:nth-child(4){height:17px}
+.search{display:flex;align-items:center;gap:12px;max-width:690px;background:#20201d;border:1px solid #4b443b;padding:0 17px;height:52px}.search svg{flex:none;color:var(--amber)}.search input{width:100%;border:0;outline:0;background:transparent;color:var(--ink);font-size:14px}.search input::placeholder{color:#8e887f}
+.section-head{display:flex;align-items:end;justify-content:space-between;border-bottom:1px solid var(--line);padding-bottom:14px;margin-bottom:25px}.section-head h2{font-size:22px;font-weight:550;margin:0}.section-head span{font-family:Georgia,serif;font-style:italic;font-size:14px;color:var(--amber)}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px}
+.story{display:block}.art{height:260px;overflow:hidden;border:1px solid #3d382f;background:#211f1a}.art svg{display:block;width:100%;height:100%}.story h3{font-size:18px;font-weight:550;margin:15px 0 2px}.story .meta{font-size:12px;color:var(--amber);margin:0}.story .desc{font-size:13px;color:var(--muted);margin:9px 0 0}.story:hover h3{color:var(--amber)}
+.empty{display:none;border:1px dashed var(--line);padding:35px;text-align:center;color:var(--muted)}
+.about{margin:76px 0 50px;border-top:1px solid var(--line);padding-top:28px;display:flex;gap:40px;justify-content:space-between}.about h2{font-family:Georgia,serif;font-weight:400;font-size:25px;margin:0}.about p{max-width:620px;color:var(--muted);font-size:13px;margin:0}
+footer{border-top:1px solid var(--line);padding:22px 0 35px;color:#817b73;font-size:12px;display:flex;justify-content:space-between}
+@media(max-width:700px){header{align-items:flex-start;gap:10px}nav{gap:13px;font-size:11px}.hero{padding:82px 25px 32px;margin-bottom:44px;min-height:0}.radio{top:28px;right:25px}h1{font-size:51px}.grid{grid-template-columns:1fr;gap:35px}.art{height:235px}.about{display:block}.about p{margin-top:12px}footer{gap:15px;flex-wrap:wrap}}
+@media(prefers-reduced-motion:no-preference){.story .art svg{transition:transform .4s}.story:hover .art svg{transform:scale(1.025)}}
+
+.about-hero{margin:18px 0 55px;border:1px solid var(--line);background:#141412;padding:53px 57px;position:relative}
+.about-hero h1{font-size:clamp(43px,6vw,64px);margin:17px 0 0}
+.bn-sub{font-family:system-ui,"Noto Sans Bengali",sans-serif;font-size:17px;color:#b9a58b;margin:0 0 18px}
+.about-hero .subtitle{margin:0}.content{max-width:800px;margin:0 auto 78px}
+.topic{display:grid;grid-template-columns:185px 1fr;gap:30px;border-top:1px solid var(--line);padding:28px 0}
+.topic h2{font-size:17px;color:var(--amber);font-weight:550;margin:0}.topic .bn{font-family:system-ui,"Noto Sans Bengali",sans-serif;color:#ab9a82;font-size:13px;margin:3px 0 0}
+.topic p{color:#d1c8bc;font-size:14px;margin:0 0 12px}.topic p:last-child{margin-bottom:0}
+.topic ul{padding-left:19px;margin:0;color:#d1c8bc;font-size:14px}.topic li{margin-bottom:9px}
+.note{font-size:12px!important;color:#a89e90!important}
+@media(max-width:700px){.about-hero{padding:75px 25px 32px}.topic{display:block}.topic>div:first-child{margin-bottom:15px}nav{gap:11px}}
+</style></head><body><div class="wrap">
+<header><a class="brand" href="index.html">Call of Bengal</a><nav><a href="archive.html">민담 자료실</a><a href="sources.html">원전 서고</a><a href="about.html" aria-current="page" style="color:var(--amber)">소개</a></nav></header>
+<main>
+<section class="about-hero">
+<div class="radio"><span class="led"></span><span>RECEIVING</span><span class="wave" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span></div>
+<div class="eyebrow">CALL OF BENGAL / ABOUT</div>
+<h1>아카이브 소개</h1><p class="bn-sub" lang="bn">সংগ্রহশালার পরিচয়</p>
+<p class="subtitle">멀리서 전해져 온 이야기들을, 다시 찾아 읽기 위해.</p>
+</section>
+<div class="content">
+<section class="topic"><div><h2>Call of Bengal</h2><p class="bn" lang="bn">বাংলার আহ্বান</p></div><div>
+<p>Call of Bengal은 벵골 지역의 옛 민담과 그 기록을 한국어로 소개하는 개인 디지털 아카이브야. 오래된 민담집을 찾아보고, 이야기의 줄거리와 특징, 원전 정보를 한곳에 모으는 것을 목표로 해.</p>
+<p class="note" lang="bn">কল অব বেঙ্গল বাংলা অঞ্চলের পুরোনো লোককথা ও সেগুলোর উৎস সম্পর্কে কোরীয় ভাষায় তথ্য সংগ্রহের একটি ব্যক্তিগত ডিজিটাল আর্কাইভ।</p>
+</div></section>
+<section class="topic"><div><h2>기록하는 것</h2><p class="bn" lang="bn">আমরা যা নথিবদ্ধ করি</p></div><div>
+<ul><li>민담의 한국어 제목과 확인 가능한 원제</li><li>수집가, 수록 문헌, 출판 연도 등 서지 정보</li><li>간결한 한국어 줄거리와 특이한 이야기 모티프</li><li>원문을 확인할 수 있는 링크와 연구 메모</li></ul>
+</div></section>
+<section class="topic"><div><h2>기록 원칙</h2><p class="bn" lang="bn">নথিবদ্ধ করার নীতি</p></div><div>
+<p>확인된 출처와 추정·해석을 구분해. 원문을 확인하지 못한 정보는 미확인 상태로 표시하고, 원문 전체를 무단으로 복제하지 않아. 자료는 가능한 한 누구나 무료로 열람할 수 있도록 공개해.</p>
+<p class="note" lang="bn">যাচাই করা তথ্য ও ব্যাখ্যাকে আলাদা রাখা হয়। উৎস যাচাই না হলে তা স্পষ্টভাবে উল্লেখ করা হয়।</p>
+</div></section>
+<section class="topic"><div><h2>언어 안내</h2><p class="bn" lang="bn">ভাষা সম্পর্কে</p></div><div>
+<p>사이트의 기본 언어는 한국어야. 주요 제목과 안내 문구 아래에는 벵골어를 병기해. 벵골어 표기는 접근성을 위한 보조 표기이며, 원전의 실제 제목은 자료마다 별도로 확인해서 기록할 예정이야.</p>
+<p class="note" lang="bn">এই সাইটের প্রধান ভাষা কোরীয়। গুরুত্বপূর্ণ শিরোনামের নিচে বাংলা অনুবাদও দেওয়া হয়।</p>
+</div></section>
+<section class="topic"><div><h2>현재 상태</h2><p class="bn" lang="bn">বর্তমান অবস্থা</p></div><div>
+<p>현재 사이트의 기본 구조를 구축하고 있어. 홈페이지에 표시된 일부 민담 카드와 상세 기록은 디자인 예시이며, 실제 문헌 검증이 완료된 자료는 앞으로 추가할 예정이야.</p>
+</div></section>
+</div></main><footer><span>© Call of Bengal</span><span><a href="index.html">홈으로 돌아가기 ↑</a></span></footer>
+</div></body></html>
