@@ -26,7 +26,12 @@ function syncURL(){
  if(genre!=='all')url.searchParams.set('genre',genre);else url.searchParams.delete('genre');
  history.replaceState(null,'',url.pathname+url.search+url.hash);
 }
-function card(s){const g=genres[s.genre]||['민담','লোককথা'];return `<article class="record"><a href="${esc(s.url)}"><h3>${esc(s.title_ko)}<span class="bn" lang="bn">${esc(s.title_bn)}</span></h3></a><p class="record-meta">${esc(g[0])}<span class="bn" lang="bn">${esc(g[1])}</span></p>${s.summary_ko?`<p class="record-desc">${esc(s.summary_ko)}${s.summary_bn?`<span class="bn" lang="bn">${esc(s.summary_bn)}</span>`:''}</p>`:''}</article>`}
+function card(s){
+ const g=genres[s.genre]||['민담','লোককথা'];
+ const image=(typeof s.cover_image==='string'&&/^assets\/illustrations\/[a-zA-Z0-9_-]+\.webp$/.test(s.cover_image))?`<a class="record-cover" href="${esc(s.url)}" aria-label="${esc(s.title_ko)} 자세히 보기"><img src="${esc(s.cover_image)}" alt="${esc(s.title_ko)} 원전 삽화" loading="lazy"/></a>`:'';
+ const titleSecond=s.title_original?`<span class="record-original" lang="en">${esc(s.title_original)}</span>`:(s.title_bn?`<span class="bn" lang="bn">${esc(s.title_bn)}</span>`:'');
+ return `<article class="record">${image}<div class="record-copy"><a href="${esc(s.url)}"><h3>${esc(s.title_ko)}${titleSecond}</h3></a><p class="record-meta">${esc(g[0])}<span class="bn" lang="bn">${esc(g[1])}</span></p>${s.summary_ko?`<p class="record-desc">${esc(s.summary_ko)}</p>`:''}</div></article>`;
+}
 function render(){
  if(featured){
   const normal=document.getElementById('featured-empty');
@@ -39,7 +44,7 @@ function render(){
  if(failed){target.hidden=true;target.innerHTML='';count.textContent='불러오기 실패 · লোড করা যায়নি';}
  else{
   const q=input.value.trim().toLocaleLowerCase();
-  const selected=stories.filter(s=>(genre==='all'||s.genre===genre)&&[s.title_ko,s.title_bn,s.summary_ko,s.summary_bn,s.collector_ko,s.collector_bn,...(Array.isArray(s.tags)?s.tags:[])].join(' ').toLocaleLowerCase().includes(q));
+  const selected=stories.filter(s=>(genre==='all'||s.genre===genre)&&[s.title_ko,s.title_original,s.title_bn,s.summary_ko,s.summary_bn,s.collector_ko,s.collector_bn,...(Array.isArray(s.tags)?s.tags:[])].join(' ').toLocaleLowerCase().includes(q));
   target.innerHTML=selected.map(card).join('');target.hidden=!selected.length;
   noResults.hidden=stories.length===0||selected.length!==0;
   count.textContent=`${selected.length}건 · ${selected.length.toLocaleString('bn-BD')}টি গল্প`;
