@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Call of Bengal 벵골 민담 자료실. 제목과 주제별로 민담 기록을 탐색하세요.">
+<title>민담 자료실 | Call of Bengal</title>
+<style>
+:root{--bg:#0d0d0c;--panel:#171715;--ink:#f2e9dd;--muted:#a8a198;--line:#35322d;--amber:#c79b65;--green:#89b58a}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,"Noto Sans KR",sans-serif;line-height:1.65}a{color:inherit;text-decoration:none}button,input{font:inherit}
+.wrap{width:min(1040px,calc(100% - 40px));margin:auto}
+header{padding:26px 0 16px;display:flex;justify-content:space-between;align-items:center}
+.brand{font-family:Georgia,serif;font-size:19px;letter-spacing:.01em}
+nav{display:flex;gap:24px;font-size:13px;color:var(--muted)}nav a:hover{color:var(--ink)}
+.hero{margin:18px 0 62px;border:1px solid var(--line);background:#141412;min-height:350px;padding:56px 58px;position:relative;overflow:hidden}
+.eyebrow{font-size:10px;letter-spacing:.22em;color:var(--amber);font-weight:700}
+h1{font-family:Georgia,"Times New Roman",serif;font-weight:400;font-size:clamp(48px,7vw,80px);line-height:1.1;letter-spacing:-.045em;margin:19px 0 9px}
+.subtitle{font-size:16px;color:#d1c8bb;margin:0 0 32px}
+.radio{position:absolute;right:56px;top:48px;display:flex;gap:15px;align-items:center;color:var(--green);font-family:monospace;font-size:10px;letter-spacing:.12em}
+.led{width:6px;height:6px;border-radius:50%;background:var(--green);box-shadow:0 0 9px var(--green)}
+.wave{display:flex;align-items:center;gap:3px;height:17px}.wave i{width:2px;background:var(--green);height:7px;opacity:.8}.wave i:nth-child(2),.wave i:nth-child(6){height:13px}.wave i:nth-child(3),.wave i:nth-child(5){height:9px}.wave i:nth-child(4){height:17px}
+.search{display:flex;align-items:center;gap:12px;max-width:690px;background:#20201d;border:1px solid #4b443b;padding:0 17px;height:52px}.search svg{flex:none;color:var(--amber)}.search input{width:100%;border:0;outline:0;background:transparent;color:var(--ink);font-size:14px}.search input::placeholder{color:#8e887f}
+.section-head{display:flex;align-items:end;justify-content:space-between;border-bottom:1px solid var(--line);padding-bottom:14px;margin-bottom:25px}.section-head h2{font-size:22px;font-weight:550;margin:0}.section-head span{font-family:Georgia,serif;font-style:italic;font-size:14px;color:var(--amber)}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px}
+.story{display:block}.art{height:260px;overflow:hidden;border:1px solid #3d382f;background:#211f1a}.art svg{display:block;width:100%;height:100%}.story h3{font-size:18px;font-weight:550;margin:15px 0 2px}.story .meta{font-size:12px;color:var(--amber);margin:0}.story .desc{font-size:13px;color:var(--muted);margin:9px 0 0}.story:hover h3{color:var(--amber)}
+.empty{display:none;border:1px dashed var(--line);padding:35px;text-align:center;color:var(--muted)}
+.about{margin:76px 0 50px;border-top:1px solid var(--line);padding-top:28px;display:flex;gap:40px;justify-content:space-between}.about h2{font-family:Georgia,serif;font-weight:400;font-size:25px;margin:0}.about p{max-width:620px;color:var(--muted);font-size:13px;margin:0}
+footer{border-top:1px solid var(--line);padding:22px 0 35px;color:#817b73;font-size:12px;display:flex;justify-content:space-between}
+@media(max-width:700px){header{align-items:flex-start;gap:10px}nav{gap:13px;font-size:11px}.hero{padding:82px 25px 32px;margin-bottom:44px;min-height:0}.radio{top:28px;right:25px}h1{font-size:51px}.grid{grid-template-columns:1fr;gap:35px}.art{height:235px}.about{display:block}.about p{margin-top:12px}footer{gap:15px;flex-wrap:wrap}}
+@media(prefers-reduced-motion:no-preference){.story .art svg{transition:transform .4s}.story:hover .art svg{transform:scale(1.025)}}
+
+.archive-hero{margin:18px 0 28px;border:1px solid var(--line);background:#141412;padding:44px 48px 37px;position:relative}
+.archive-hero h1{font-size:clamp(36px,5.4vw,56px);margin:17px 0 8px}
+.archive-hero .subtitle{margin:0}
+.filters{display:flex;flex-wrap:wrap;gap:9px;margin:22px 0 28px}
+.filter{background:transparent;border:1px solid #51483d;border-radius:99px;padding:7px 14px;color:#c5baaa;cursor:pointer;font-size:12px}
+.filter:hover{border-color:var(--amber)}.filter[aria-pressed="true"]{color:#0d0d0c;background:var(--amber);border-color:var(--amber)}
+.archive-tools{display:flex;gap:15px;align-items:center;justify-content:space-between}
+.archive-tools .search{flex:1;max-width:none}
+.count{color:var(--muted);font-size:12px;white-space:nowrap}
+.archive-grid{margin-bottom:76px}
+.archive-grid .story{border:1px solid var(--line);background:#141412;padding:12px}
+.archive-grid .art{height:245px}
+.archive-grid .story h3{padding:0 6px}
+.archive-grid .story .meta,.archive-grid .story .desc{padding:0 6px}
+.archive-grid .story .desc{padding-bottom:8px}
+.archive-grid .story:focus-within{outline:1px solid var(--amber)}
+.demo{font-size:12px;color:#a89a85;border-left:2px solid var(--amber);padding:9px 13px;background:#201c16;margin:0 0 22px}
+.no-results{display:none;text-align:center;border:1px dashed var(--line);padding:42px 15px;color:var(--muted)}
+@media(max-width:700px){.archive-hero{padding:75px 24px 28px}.archive-tools{display:block}.archive-tools .count{margin-top:10px;display:block}.archive-grid .art{height:220px}}
+</style>
+</head>
+<body><div class="wrap">
+<header><a class="brand" href="index.html">Call of Bengal</a><nav><a href="archive.html" aria-current="page" style="color:var(--amber)">민담 자료실</a><a href="index.html#about">소개</a></nav></header>
+<main>
+<section class="archive-hero" aria-labelledby="archive-title">
+<div class="radio"><span class="led"></span><span>RECEIVING</span><span class="wave" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span></div>
+<div class="eyebrow">CALL OF BENGAL / ARCHIVE</div>
+<h1 id="archive-title">민담 자료실</h1>
+<p class="subtitle">벵골에서 전해진 이야기들을 찾아보세요.</p>
+</section>
+<p class="demo">현재는 사이트 구조를 확인하기 위한 디자인 예시 2건이 등록되어 있어. 실제 민담 자료와 출처는 추후 추가할 예정이야.</p>
+<div class="archive-tools">
+<label class="search"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m16 16 5 5"/></svg><input id="archive-search" type="search" placeholder="민담 제목, 귀신, 수집가 검색..." aria-label="민담 검색"></label>
+<span class="count" id="result-count" aria-live="polite">2건의 기록</span>
+</div>
+<div class="filters" role="group" aria-label="민담 주제 필터">
+<button class="filter" data-filter="all" aria-pressed="true">전체</button>
+<button class="filter" data-filter="ghost" aria-pressed="false">귀신·괴물</button>
+<button class="filter" data-filter="nature" aria-pressed="false">동물·자연</button>
+<button class="filter" data-filter="royal" aria-pressed="false">왕·궁전</button>
+<button class="filter" data-filter="odd" aria-pressed="false">기담·풍자</button>
+</div>
+<section aria-label="민담 목록">
+<div class="grid archive-grid" id="archive-grid">
+<article class="story" data-category="nature" data-search="숲과 호랑이의 이야기 호랑이 숲 동물 자연 민담">
+<a href="stories/story-001.html" aria-label="숲과 호랑이의 이야기 상세 기록 보기"><div class="art"><svg viewBox="0 0 600 340" preserveAspectRatio="xMidYMid slice" role="img" aria-label="숲과 호랑이를 표현한 장식용 삽화"><rect width="600" height="340" fill="#c5b89a"/><g fill="#293b32"><path d="M0 340V75l75 74 45-121 59 139 49-100 61 116 61-139 67 134 55-100 56 121 72-73V340Z" opacity=".85"/><path d="M0 340V197l40-44 40 72 50-122 49 115 46-50 55 72 47-116 61 102 42-63 67 77 53-93 50 57V340Z" opacity=".75"/></g><g fill="#15251e"><path d="M0 340V270l57-28 42 31 49-51 53 41 49-29 66 45 63-53 47 38 52-40 50 40 72-18V340Z"/></g><g transform="translate(200 212)"><path d="M8 59q-8-36 22-49 25-10 49 5l46 2q25 3 27 22l-7 24h-20l-7-20-15 20H74l-10-22-12 22H30l-6-16-9 16H0Z" fill="#d1a05e"/><path d="M120 23q18-24 35-7l14 9-6 20-24 2-16-15" fill="#d1a05e"/><path d="m136 9 5-15 10 13 12-11 1 21" fill="#d1a05e"/><path d="M17 17 32 52M45 12l10 37M77 18l-4 39M100 17l-3 32M124 21l-4 24" stroke="#3a2b22" stroke-width="9"/><circle cx="155" cy="26" r="3" fill="#151b15"/><path d="M12 34q-40-36-49 10" fill="none" stroke="#d1a05e" stroke-width="12"/></g><rect x="9" y="9" width="582" height="322" fill="none" stroke="#e9dbb8" stroke-opacity=".3"/></svg></div><h3>숲과 호랑이의 이야기 ↗</h3></a>
+<p class="meta">동물·자연 · 디자인 예시</p><p class="desc">벵골의 숲과 동물을 둘러싼 이야기들. 상세 기록 양식을 확인할 수 있어.</p>
+</article>
+<article class="story" data-category="ghost" data-search="라크샤사의 이야기 라크샤사 악귀 괴물 귀신 초자연 민담">
+<div class="art"><svg viewBox="0 0 600 340" preserveAspectRatio="xMidYMid slice" role="img" aria-label="고풍스러운 궁전과 신비로운 존재를 표현한 장식용 삽화"><rect width="600" height="340" fill="#a78b6c"/><circle cx="454" cy="79" r="58" fill="#e3c991" opacity=".8"/><path d="M0 340V195l55-34 50 43 47-50 59 57 58-84 65 61 50-65 63 74 62-40 91 49V340Z" fill="#62554a"/><g fill="#3a3b38"><rect x="130" y="149" width="350" height="191"/><rect x="173" y="119" width="262" height="36"/><path d="M153 119 304 25l150 94Z"/><rect x="212" y="170" width="58" height="170" fill="#b58f69"/><rect x="330" y="170" width="58" height="170" fill="#b58f69"/><path d="M269 340V235q30-53 61 0v105Z" fill="#1e2928"/></g><g fill="#d8b780"><path d="M230 188q13-28 26 0v45h-26ZM348 188q13-28 26 0v45h-26Z"/></g><path d="M0 340V296q84-48 151 3 77-38 153 3 99-50 163-4 68-30 133 1v41Z" fill="#273b34"/><g transform="translate(470 218)" fill="#212b2b"><path d="M0 122V51q-4-33 21-38l-4-17 21 12 19-16-1 24q28 10 19 48l-5 58Z"/><circle cx="25" cy="39" r="4" fill="#c9a06e"/><circle cx="49" cy="39" r="4" fill="#c9a06e"/></g><rect x="9" y="9" width="582" height="322" fill="none" stroke="#ead5b5" stroke-opacity=".35"/></svg></div><h3>라크샤사의 이야기</h3>
+<p class="meta">귀신·괴물 · 디자인 예시</p><p class="desc">기이한 존재를 다루는 이야기. 상세 기록은 아직 준비 중이야.</p>
+</article>
+</div>
+<div class="no-results" id="no-results" role="status">조건에 맞는 기록이 없어. 검색어나 분류를 바꿔봐.</div>
+</section>
+</main>
+<footer><span>© Call of Bengal</span><span><a href="index.html">홈으로 돌아가기 ↑</a></span></footer>
+</div>
+<script>
+const input=document.getElementById('archive-search');
+const cards=[...document.querySelectorAll('.archive-grid .story')];
+const buttons=[...document.querySelectorAll('.filter')];
+const count=document.getElementById('result-count');
+const empty=document.getElementById('no-results');
+const allowed=new Set(['all','ghost','nature','royal','odd']);
+let active='all';
+function render(){
+ const q=input.value.trim().toLocaleLowerCase();
+ let shown=0;
+ for(const card of cards){
+  const visible=(active==='all'||card.dataset.category===active)&&card.dataset.search.toLocaleLowerCase().includes(q);
+  card.hidden=!visible;card.style.display=visible?'':'none';if(visible)shown++;
+ }
+ count.textContent=`${shown}건의 기록`;
+ empty.style.display=shown?'none':'block';
+ for(const button of buttons)button.setAttribute('aria-pressed',String(button.dataset.filter===active));
+}
+buttons.forEach(button=>button.addEventListener('click',()=>{active=button.dataset.filter;render();}));
+input.addEventListener('input',render);
+const initial=new URLSearchParams(location.search).get('category');
+if(allowed.has(initial))active=initial;
+render();
+</script>
+</body></html>
