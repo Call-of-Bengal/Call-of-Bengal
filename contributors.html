@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<meta name="theme-color" content="#0d0d0c"/>
+<meta name="description" content="Call of Bengal에 이야기를 기여한 한국·벵골 작가와 공개 작품을 소개합니다."/>
+<meta property="og:type" content="website"/>
+<meta property="og:title" content="기여작가 목록 | Call of Bengal"/>
+<meta property="og:description" content="Call of Bengal에 이야기를 기여한 한국·벵골 작가와 공개 작품을 소개합니다."/>
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml"/>
+<link rel="stylesheet" href="assets/style.css"/>
+<link rel="canonical" href="https://call-of-bengal.github.io/Call-of-Bengal/contributors.html"/>
+<title>기여작가 목록 | Call of Bengal</title>
+</head>
+<body><div class="wrap">
+<header class="site-header"><a class="brand" href="index.html">Call of Bengal</a><nav aria-label="주 메뉴" class="site-nav"><a href="index.html">홈<span class="bn" lang="bn">প্রচ্ছদ</span></a><a href="archive.html">민담 자료실<span class="bn" lang="bn">লোককথার সংগ্রহশালা</span></a><a href="exchange.html">괴담 교환소<span class="bn" lang="bn">ভৌতিক গল্প বিনিময়</span></a><a aria-current="page" href="contributors.html">기여작가 목록<span class="bn" lang="bn">অবদানকারী লেখকদের তালিকা</span></a><a href="sources.html">원전 서고<span class="bn" lang="bn">মূল গ্রন্থের সংগ্রহ</span></a><a href="about.html">소개<span class="bn" lang="bn">পরিচিতি</span></a></nav></header>
+<main>
+<section class="hero"><div class="radio"><span class="led"></span>RECEIVING <span class="wave" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span></div><div class="eyebrow">CALL OF BENGAL / CONTRIBUTORS</div><h1>기여작가 목록</h1><p class="lead">이 아카이브에 이야기를 전한 작가들을 소개합니다.<span class="bn" lang="bn">এই সংগ্রহশালায় গল্প পাঠানো লেখকদের পরিচয় জানুন।</span></p></section>
+
+<section aria-label="기여작가 명단" class="contributors-section">
+<div id="contributors-grid" class="contributors-grid">
+<section class="contributors-column" aria-labelledby="writers-korea"><div class="contributors-column-head"><h2 id="writers-korea">한국<span class="bn" lang="bn">কোরিয়া</span></h2><span class="contributors-total" id="korea-total"></span></div><ul class="contributors-list" id="korea-contributors"></ul><p class="contributors-empty" id="korea-empty">아직 등록된 작가가 없습니다.<span class="bn" lang="bn">এখনও কোনো লেখক নিবন্ধিত হননি।</span></p></section>
+<section class="contributors-column" aria-labelledby="writers-bengal"><div class="contributors-column-head"><h2 id="writers-bengal">벵골<span class="bn" lang="bn">বাংলা</span></h2><span class="contributors-total" id="bengal-total"></span></div><ul class="contributors-list" id="bengal-contributors"></ul><p class="contributors-empty" id="bengal-empty">아직 등록된 작가가 없습니다.<span class="bn" lang="bn">এখনও কোনো লেখক নিবন্ধিত হননি।</span></p></section>
+</div>
+<div class="empty error-state" id="contributors-error" hidden><h3>작가 목록을 불러오지 못했습니다.</h3><p lang="bn">লেখকদের তালিকা লোড করা যায়নি।</p><button class="retry-button" id="contributors-retry" type="button">다시 시도<span class="bn" lang="bn">আবার চেষ্টা করুন</span></button></div>
+</section>
+</main><footer class="site-footer"><span>© Call of Bengal</span><span>이야기는 국경을 넘어 전해집니다.<span class="bn" lang="bn">গল্প সীমানা পেরিয়ে ছড়িয়ে পড়ে।</span></span></footer></div>
+<div class="contributor-overlay" id="contributor-overlay" hidden>
+<div class="contributor-dialog" role="dialog" aria-modal="true" aria-labelledby="contributor-name" aria-describedby="contributor-bio" tabindex="-1">
+<button class="dialog-close" id="contributor-close" type="button" aria-label="작가 상세 창 닫기">×</button>
+<p class="eyebrow">CALL OF BENGAL / CONTRIBUTOR</p>
+<h2 id="contributor-name"></h2><p id="contributor-original" class="contributor-original" hidden></p>
+<p id="contributor-region" class="contributor-region"></p><p id="contributor-bio" class="contributor-bio"></p>
+<h3>기여 작품<span class="bn" lang="bn">প্রকাশিত লেখা</span></h3>
+<ul id="contributor-works" class="contributor-works"></ul>
+<h3>외부 채널<span class="bn" lang="bn">লেখকের অনলাইন ঠিকানা</span></h3>
+<div id="contributor-links" class="contributor-links"></div>
+</div>
+</div>
+<script defer src="assets/contributors.js"></script></body></html>
